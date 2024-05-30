@@ -1,14 +1,8 @@
 <?php
 require_once './src/Conta.php';
+require_once './src/Titular.php';
 
-$primeiraConta = new Conta();
+$primeiraConta = new Conta(new Titular('123456789', 'João'));
 $primeiraConta->depositar(500);
 $primeiraConta->sacar(300);
-
-
-$primeiraConta->definirCpfTitular('123456789');
-$primeiraConta->definirNomeTitular('João');
-
-echo $primeiraConta->recuperarCpfTitular();
-echo $primeiraConta->recuperarNomeTitular();
-echo $primeiraConta->recuperarSaldo();
+echo $primeiraConta->recuperarSaldo() . PHP_EOL;
