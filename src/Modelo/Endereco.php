@@ -1,5 +1,8 @@
 <?php
 
+namespace Alura\Banco\Modelo;
+
+require_once '../../autoload.php';
 class Endereco
 {
     private string $cidade;
@@ -7,7 +10,7 @@ class Endereco
     private string $rua;
     private string $numero;
 
-    private function __construct(
+    public function __construct(
         string $cidade,
         string $bairro,
         string $rua,

@@ -1,5 +1,11 @@
 <?php
 
+namespace Alura\Banco\Modelo\Conta;
+
+require_once '../../../autoload.php';
+
+use Alura\Banco\Conta\Titular;
+
 class Conta
 {
     private $titular;
@@ -46,8 +52,8 @@ class Conta
             return;
         }
 
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        $this->saca($valorATransferir);
+        $contaDestino->deposita($valorATransferir);
     }
 
     public function recuperaSaldo(): float

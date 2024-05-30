@@ -1,5 +1,12 @@
 <?php
 
+namespace Alura\Banco\Modelo;
+
+require_once '../../autoload.php';
+
+use Alura\Banco\Modelo\CPF;
+
+
 class Pessoa
 {
     protected string $nome;
