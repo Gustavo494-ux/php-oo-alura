@@ -2,10 +2,7 @@
 
 namespace Alura\Banco\Modelo;
 
-require_once '../../autoload.php';
-
 use Alura\Banco\Modelo\CPF;
-
 
 class Pessoa
 {
@@ -32,7 +29,8 @@ class Pessoa
     {
         if (strlen($nomeTitular) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
+            return;
         }
+        return $nomeTitular;
     }
 }

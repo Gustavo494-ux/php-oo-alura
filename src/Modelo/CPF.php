@@ -2,7 +2,6 @@
 
 namespace Alura\Banco\Modelo;
 
-require_once '../../autoload.php';
 class CPF
 {
     private $numero;

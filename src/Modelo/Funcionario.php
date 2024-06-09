@@ -5,11 +5,6 @@ namespace Alura\Banco\Modelo;
 use Alura\Banco\Modelo\CPF;
 use Alura\Banco\Modelo\Pessoa;
 
-require_once '../../autoload.php';
-
-
-
-
 class Funcionario extends Pessoa
 {
     private string $cargo;

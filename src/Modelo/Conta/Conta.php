@@ -2,9 +2,9 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-require_once '../../../autoload.php';
+use Alura\Banco\Modelo\Conta\Titular;
 
-use Alura\Banco\Conta\Titular;
+
 
 class Conta
 {
