@@ -6,10 +6,10 @@ use Alura\Banco\Modelo\Conta\Titular;
 
 
 
-class Conta
+abstract class Conta
 {
     private $titular;
-    private $saldo;
+    protected $saldo;
     private static $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
@@ -27,16 +27,18 @@ class Conta
 
     public function saca(float $valorASacar): void
     {
-        if ($valorASacar > $this->saldo) {
+        $tarifaSaque = $valorASacar * $this->percentualTarifaDeContas();
+        $valorSaque = $valorASacar + $tarifaSaque;
+        if ($valorSaque > $this->saldo) {
             echo "Saldo indisponível";
             return;
         }
-
-        $this->saldo -= $valorASacar;
+        $this->saldo -= $valorSaque;
     }
 
     public function deposita(float $valorADepositar): void
     {
+        echo $valorADepositar;
         if ($valorADepositar < 0) {
             echo "Valor precisa ser positivo";
             return;
@@ -75,4 +77,6 @@ class Conta
     {
         return self::$numeroDeContas;
     }
+
+    abstract function percentualTarifaDeContas(): float;
 }
