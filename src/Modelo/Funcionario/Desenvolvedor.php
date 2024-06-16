@@ -2,10 +2,11 @@
 
 namespace Alura\Banco\Modelo\Funcionario;
 
-use Alura\Banco\Modelo\Funcionario\Funcionario;
+use Alura\Banco\Modelo\AcessoPropriedades;
 
 class Desenvolvedor extends Funcionario
 {
+    use AcessoPropriedades;
     public function sobeDeNivel(): void
     {
         $this->recebeAumento($this->recuperaSalario()*0.75);
@@ -15,4 +16,5 @@ class Desenvolvedor extends Funcionario
    {
        return 500.0;
    }
+
 }
